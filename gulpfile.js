@@ -34,6 +34,11 @@ gulp.task('build:lottie', () => {
     .pipe(gulp.dest('./example/lottie'));
 });
 
+gulp.task('build:taro', () => {
+  return createTask(lottieGlob)
+    .pipe(gulp.dest('./taro-example/src/lottie'));
+});
+
 gulp.task('publish', () => {
   return createTask(componetGlob, './lib/component')
     .pipe(replace('../lottie/index.js', '../lottie-miniapp.min.js'))
