@@ -93,7 +93,7 @@ class AnimationItem extends BaseEvent {
     // 判断是否在可视区域内
     if (wx.createIntersectionObserver) {
       const canvasId = params.rendererSettings.context.canvasId;
-      const observer = wx.createIntersectionObserver();
+      const observer = wx.createIntersectionObserver({ initialRatio: 0 });
       this.$observer = observer;
       observer.relativeToViewport({
         bottom: 10,
